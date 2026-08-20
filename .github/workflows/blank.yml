@@ -9,4 +9,8 @@ jobs:
 
     steps:
       - name: Say Hello
-        run: echo "Hello World"!
+        run: |
+          echo "this is line one"
+          echo "this is line two"
+          echo "this is line three"
+        
