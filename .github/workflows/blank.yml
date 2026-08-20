@@ -1,4 +1,4 @@
-name: Hello World Multiple Jobs
+ name: Hello World Sequential Jobs
 
 on:
   push:
@@ -9,22 +9,21 @@ on:
 jobs:
 
   job1:
-    name: Hello World Job
     runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
+      - name: Job 1
         run: echo "Hello World from Job 1"
 
   job2:
-    name: Welcome Job
+    needs: job1
     runs-on: ubuntu-latest
     steps:
-      - name: Say Welcome
-        run: echo "Welcome to GitHub Actions - Job 2"
+      - name: Job 2
+        run: echo "Hello World from Job 2"
 
   job3:
-    name: Goodbye Job
+    needs: job2
     runs-on: ubuntu-latest
     steps:
-      - name: Say Goodbye
-        run: echo "Goodbye from Job 3"
+      - name: Job 3
+        run: echo "Hello World from Job 3"
