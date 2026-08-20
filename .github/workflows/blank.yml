@@ -1,5 +1,4 @@
- name: Hello World Sequential Jobs
-
+name: Hello World Sequential Jobs
 on:
   push:
     branches:
