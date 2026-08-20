@@ -1,28 +1,22 @@
-name: Hello World Sequential Jobs
-on:
-  push:
-    branches:
-      - main
-  workflow_dispatch:
-
+name: Hello World 
+on: push
 jobs:
-
-  job1:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Job 1
-        run: echo "Hello World from Job 1"
+      - name: build step
+        run: echo "A demo build"
 
-  job2:
-    needs: job1
-    runs-on: ubuntu-latest
-    steps:
-      - name: Job 2
-        run: echo "Hello World from Job 2"
+ 
+ 
+ 
+ 
+ 
+ 
 
-  job3:
-    needs: job2
-    runs-on: ubuntu-latest
-    steps:
-      - name: Job 3
-        run: echo "Hello World from Job 3"
+ 
+ 
+ 
+ 
+ 
+ 
