@@ -1,0 +1,41 @@
+name: Demo Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: "Enter your name"
+        required: true
+        default: "Santhoshini"
+
+      environment:
+        description: "Select environment"
+        required: true
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+        default: dev
+
+      deploy:
+        description: "Do you want to deploy?"
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display inputs
+        run: |
+          echo "Name: ${{ inputs.name }}"
+          echo "Environment: ${{ inputs.environment }}"
+          echo "Deploy: ${{ inputs.deploy }}"
+
+      - name: Hello
+        run: |
+          echo "Hello ${{ inputs.name }}"
+          echo "Selected environment: ${{ inputs.environment }}"
